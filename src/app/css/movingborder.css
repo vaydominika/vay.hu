@@ -1,0 +1,42 @@
+.movingborder {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.40rem;
+    padding: 2px;
+}
+
+.movingborder::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(102, 102, 102, 0.75) 30%,
+        rgba(255, 255, 255, 0) 50%
+    );
+    animation: rotate 5s linear infinite;
+    z-index: 0;
+}
+
+.movingborder .inner {
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    margin: 2px;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    height: 100%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
