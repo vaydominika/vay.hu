@@ -1,42 +1,45 @@
 .movingborder {
     position: relative;
-    overflow: hidden;
-    border-radius: 0.40rem;
-    padding: 2px;
+    padding: 0.10rem;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.movingborder::before, .movingborder::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+        from var(--angle),
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255,108,155,0.76) 30%,
+        rgba(255, 255, 255, 0) 50%
+    );
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: .40rem;
+    padding: 2rem;
+    animation: 3s rotate linear infinite;
 }
 
 .movingborder::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 10%,
-        rgba(102, 102, 102, 0.75) 30%,
-        rgba(255, 255, 255, 0) 50%
-    );
-    animation: rotate 5s linear infinite;
-    z-index: 0;
-}
-
-.movingborder .inner {
-    position: relative;
-    background-color: white;
-    z-index: 1;
-    margin: 2px;
-    border-radius: 0.35rem;
-    overflow: hidden;
-    height: 100%;
+    filter: blur(1.5rem);
+    opacity: .5;   
 }
 
 @keyframes rotate {
     0% {
-        transform: rotate(0deg);
+        --angle: 0deg;
     }
     100% {
-        transform: rotate(360deg);
+        --angle: 360deg;
     }
 }
+

@@ -7,9 +7,9 @@ import me from '@/app/img/me.jpg'
 const AboutMe = () => {
   return (
     <>
-      <h2 className='text-4xl font-extrabold mb-4 text-center'>Get to know <span className="text-gray-700 italic">Me</span></h2>
+      <h2 className='text-4xl font-extrabold mb-4 text-center'>Get to know <span className="bg-clip-text text-transparent bg-gradient-to-r from-[rgb(255,82,137)] to-[rgba(255,108,155,0.76)] italic">Me</span></h2>
       <div className="w-full max-w-5xl mx-auto mt-8 movingborder">
-        <Card className='border-none shadow-none'>
+        <Card className='border-none shadow-none bg-neutral-50  rounded-[0.40rem]'>
           <CardContent className="p-6 inner">
           <p className="text-gray-700 p-6 text-center font-semibold text-2xl">🌟 Hi there! I’m Dominika 🌟</p>
             <div className="flex flex-col md:flex-row">
