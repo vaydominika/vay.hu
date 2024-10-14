@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Button } from "@/components/ui/button"
-import { buttonVariants } from "@/components/ui/button"
 import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
