@@ -1,14 +1,58 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 
 const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState('')
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({})
+
+  useEffect(() => {
+    const sections = ['home', 'aboutme', 'myskills', 'resume', 'myworks']
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id
+            setActiveLink(sectionId === 'home' ? 'Home' : 
+                          sectionId === 'aboutme' ? 'About me' :
+                          sectionId === 'myskills' ? 'My skills' :
+                          sectionId === 'resume' ? 'Resume' :
+                          sectionId === 'myworks' ? 'My works' : '')
+          }
+        })
+      },
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+    )
+
+    sections.forEach(section => {
+      const element = document.getElementById(section)
+      if (element) {
+        sectionRefs.current[section] = element
+        observer.observe(element)
+      }
+    })
+
+    return () => {
+      sections.forEach(section => {
+        const element = sectionRefs.current[section]
+        if (element) {
+          observer.unobserve(element)
+        }
+      })
+    }
+  }, [])
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link)
+    const element = document.getElementById(link.toLowerCase().replace(' ', ''))
+    if (element) {
+      const yOffset = -100; // Adjust this offset as needed
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 
   return (
@@ -20,26 +64,16 @@ const NavigationBar = () => {
               Vay Dominika
             </Link>
             <div className="flex">
-              {['About me', 'My skills', 'Resume', 'My works'].map((item, index) => (
+              {['Home', 'About me', 'My skills', 'Resume', 'My works'].map((item, index) => (
                 <Link 
                   key={index}
-                  href={item === 'About me' ? '/' : `/${item.toLowerCase().replace(' ', '')}`} 
+                  href={`#${item.toLowerCase().replace(' ', '')}`} 
                   className={`relative text-black/70 font-semibold tracking-wider hover:text-primary transition-all duration-300 px-3 py-2 rounded-md text-sm group ${activeLink === item ? 'text-primary' : ''}`}
                   onClick={() => handleLinkClick(item)}
                 >
                   <span className="relative z-10">{item}</span>
-                  {activeLink === item && (
-                    <>
-                      <span className="absolute left-0 bottom-0 w-full h-[0.05rem] bg-primary/80"></span>
-                      <span className="absolute right-0 top-0 w-full h-[0.05rem] bg-primary/80"></span>
-                    </>
-                  )}
-                  {activeLink !== item && (
-                    <>
-                      <span className="absolute left-0 bottom-0 w-0 h-[0.05rem] bg-primary/80 transition-all duration-300 group-hover:w-full"></span>
-                      <span className="absolute right-0 top-0 w-0 h-[0.05rem] bg-primary/80 transition-all duration-300 group-hover:w-full"></span>
-                    </>
-                  )}
+                  <span className={`absolute left-0 bottom-0 h-[0.05rem] bg-primary/80 transition-all duration-300 ${activeLink === item ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  <span className={`absolute right-0 top-0 h-[0.05rem] bg-primary/80 transition-all duration-300 ${activeLink === item ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                 </Link>
               ))}
             </div>
