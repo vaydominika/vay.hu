@@ -3,10 +3,12 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Typewriter } from 'react-simple-typewriter'
+import backgroundimage from '@/app/img/aaabstract.png'
 
 const Hero = () => {
   return (
-    <div className="hero min-h-screen bg-base-200 flex items-center max-w-6xl m-auto">
+    <div style={{ backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8)), url(${backgroundimage.src})`, backgroundSize: "cover"}}>
+    <div className="hero min-h-screen flex items-center max-w-6xl m-auto" >
       <div className="hero-content">
         <div className="max-w-6xl -translate-y-12">
           <h1 className="text-8xl font-bold text-black/90">Vay Dominika</h1>
@@ -27,8 +29,8 @@ const Hero = () => {
         </div>
       </div>
     </div>
+    </div>
   )
 }
 
 export default Hero
-

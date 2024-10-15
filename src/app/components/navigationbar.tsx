@@ -49,14 +49,14 @@ const NavigationBar = () => {
     setActiveLink(link)
     const element = document.getElementById(link.toLowerCase().replace(' ', ''))
     if (element) {
-      const yOffset = -100; // Adjust this offset as needed
+      const yOffset = -100;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }
 
   return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50">
+    <nav className="bg-background sticky top-0 z-50">
       <div className="m-auto ax-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
