@@ -1,8 +1,9 @@
 import React from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { BiLogoTypescript } from 'react-icons/bi'
+import { BiLogoTypescript, BiLogoJavascript, BiLogoReact, BiLogoNodejs } from 'react-icons/bi'
 import { MdViewQuilt } from "react-icons/md"
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { SiNextdotjs } from "react-icons/si";
 
 const MySkills = () => {
   const skills = [
@@ -23,19 +24,42 @@ const MySkills = () => {
     },
   ]
 
+  const languages = [
+    { name: "JavaScript", icon: BiLogoJavascript },
+    { name: "TypeScript", icon: BiLogoTypescript },
+    { name: "React", icon: BiLogoReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Node.js", icon: BiLogoNodejs },
+  ]
+
   return (
-    <div className="container mx-auto p-36">
-      <h2 className="text-4xl tracking-tight font-extrabold mb-8 text-center">Skills in Action</h2>
-      <div className="flex flex-wrap justify-center gap-6">
+    <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36">
+      <h2 className="text-3xl sm:text-4xl tracking-tight font-extrabold mb-8 text-center">Skills in Action</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
-          <Card key={index} className="rounded-[.40rem] text-gray-700 w-[20rem] h-[37rem] flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
+          <Card key={index} className="rounded-[.40rem] text-gray-700 w-full sm:w-11/12 md:w-10/12 lg:w-full mx-auto h-full flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-col items-center">
-              <skill.icon className="text-gray-700 text-[7rem] mt-8" />
-              <CardTitle className="text-xl text-center justify-center pt-16 tracking-tight">{skill.title}</CardTitle>
+              <skill.icon className="text-gray-700 text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] mt-4 sm:mt-6 md:mt-8" />
+              <CardTitle className="text-lg sm:text-xl text-center justify-center pt-8 sm:pt-12 md:pt-16 tracking-tight">{skill.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow flex items-center">
-              <p className="text-gray-600">{skill.description}</p>
+              <p className="text-gray-600 text-sm sm:text-base">{skill.description}</p>
             </CardContent>
+          </Card>
+        ))}
+      </div>
+      
+      <div className="flex items-center justify-center mt-16 mb-8">
+        <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
+        <h3 className="text-2xl sm:text-3xl tracking-tight font-bold mx-4 text-center text-gray-700">Technologies I Use</h3>
+        <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
+      </div>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+        {languages.map((lang, index) => (
+          <Card key={index} className="rounded-[.40rem] w-full h-32 sm:h-40 flex flex-col items-center justify-center bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/50 hover:shadow-lg transition-shadow duration-300">
+            <lang.icon className="text-gray-700 text-4xl sm:text-5xl mb-3" />
+            <p className="text-sm sm:text-base text-gray-600">{lang.name}</p>
           </Card>
         ))}
       </div>
