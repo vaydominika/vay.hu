@@ -25,19 +25,19 @@ const MySkills = () => {
   ]
 
   const languages = [
-    { name: "JavaScript", icon: BiLogoJavascript },
-    { name: "TypeScript", icon: BiLogoTypescript },
-    { name: "React", icon: BiLogoReact },
-    { name: "Next.js", icon: SiNextdotjs },
-    { name: "Node.js", icon: BiLogoNodejs },
+    { name: "JavaScript", icon: BiLogoJavascript, color: "text-yellow-500" },
+    { name: "TypeScript", icon: BiLogoTypescript, color: "text-blue-500"},
+    { name: "React", icon: BiLogoReact,color: "text-cyan-500" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-gray-800" },
+    { name: "Node.js", icon: BiLogoNodejs, color: "text-green-500"},
   ]
 
   return (
-    <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36">
+    <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36 max-w-6xl">
       <h2 className="text-3xl sm:text-4xl tracking-tight font-extrabold mb-8 text-center">Skills in Action</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
-          <Card key={index} className="rounded-[.40rem] text-gray-700 w-full sm:w-11/12 md:w-10/12 lg:w-full mx-auto h-full flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
+          <Card key={index} className="rounded-[.40rem] text-gray-700 w-full sm:w-11/12 md:w-10/12 lg:w-full mx-auto h-auto flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-col items-center">
               <skill.icon className="text-gray-700 text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] mt-4 sm:mt-6 md:mt-8" />
               <CardTitle className="text-lg sm:text-xl text-center justify-center pt-8 sm:pt-12 md:pt-16 tracking-tight">{skill.title}</CardTitle>
@@ -58,7 +58,7 @@ const MySkills = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
         {languages.map((lang, index) => (
           <Card key={index} className="rounded-[.40rem] w-full h-32 sm:h-40 flex flex-col items-center justify-center bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/50 hover:shadow-lg transition-shadow duration-300">
-            <lang.icon className="text-gray-700 text-4xl sm:text-5xl mb-3" />
+            <lang.icon className={`text-4xl sm:text-5xl mb-3 ${lang.color}`} />
             <p className="text-sm sm:text-base text-gray-600">{lang.name}</p>
           </Card>
         ))}
