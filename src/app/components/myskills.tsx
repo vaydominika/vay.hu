@@ -34,7 +34,7 @@ const MySkills = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36 max-w-6xl">
-      <h2 className="text-3xl sm:text-4xl tracking-tight font-extrabold mb-8 text-center">Skills in Action</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center tracking-tighter text-gray-700">Skills in <span className='italic'>Action</span></h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
           <Card key={index} className="rounded-[.40rem] text-gray-700 w-full sm:w-11/12 md:w-10/12 lg:w-full mx-auto h-auto flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
@@ -51,7 +51,7 @@ const MySkills = () => {
       
       <div className="flex items-center justify-center mt-16 mb-8">
         <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
-        <h3 className="text-2xl sm:text-3xl tracking-tight font-bold mx-4 text-center text-gray-700">Technologies I Use</h3>
+        <h3 className="text-2xl sm:text-3xl tracking-tighter font-bold mx-4 text-center text-gray-700">Technologies I Use</h3>
         <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
       </div>
       

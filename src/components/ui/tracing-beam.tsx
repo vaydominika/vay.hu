@@ -51,7 +51,7 @@ export const TracingBeam = ({
       ref={ref}
       className={cn("relative w-full mx-auto overflow-hidden", className)}
     >
-      <div className="absolute left-1/2 top-36 transform -translate-x-1/2">
+      <div className="absolute left-1/2 top-48 transform -translate-x-1/2">
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"

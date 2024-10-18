@@ -3,64 +3,57 @@ import { motion } from "framer-motion"
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa'
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { Separator } from "@/components/ui/separator"
+import resumeBackground from "@/app/svg/resumebg.svg"
 
 const Resume = () => {
   const items = [
     {
       icon: <FaGraduationCap className="w-6 h-6" />,
-      title: "Bachelor of Science in Computer Science",
-      subtitle: "University of Technology",
-      date: "2016 - 2020",
+      title: "IT system operator",
+      subtitle: "MSZC Bláthy Ottó Villamosipari Technikum",
+      description: "High School Graduation",
+      date: "2018 - 2022",
     },
     {
-      icon: <FaBriefcase className="w-6 h-6" />,
-      title: "Software Engineer",
-      subtitle: "Tech Solutions Inc.",
-      date: "2020 - Present",
-      description: "Developed web applications using React and Node.js. Collaborated with cross-functional teams.",
+      icon: <FaGraduationCap className="w-6 h-6" />,
+      title: "IT system operator",
+      subtitle: "MSZC Bláthy Ottó Villamosipari Technikum",
+      date: "2022 - 2023",
+      description: " Technician Certificate (OKJ).",
     },
     {
-      icon: <FaBriefcase className="w-6 h-6" />,
-      title: "Junior Web Developer",
-      subtitle: "WebCraft Studios",
-      date: "2018 - 2020",
-      description: "Assisted in the development of responsive websites. Gained experience in HTML, CSS, and JavaScript.",
-    },
-    {
-      icon: <FaCode className="w-6 h-6" />,
-      title: "Frontend Skills",
-      subtitle: "React, TypeScript, HTML, CSS",
+      icon: <FaGraduationCap className="w-6 h-6" />,
+      title: "BSC in Computer Science Engineer",
+      subtitle: "University of Miskolc.",
+      date: "2023 - present",
+      description: "Ongoing studies at the University of Miskolc.",
     },
     {
       icon: <FaCode className="w-6 h-6" />,
-      title: "Backend Skills",
-      subtitle: "Node.js, Express, MongoDB",
-    },
-    {
-      icon: <FaCode className="w-6 h-6" />,
-      title: "Other Skills",
-      subtitle: "Git, Docker, AWS",
+      title: "Student Frontend Developer",
+      subtitle: "Evosoft - Evocampus",
+      date: "2024 - present",
+      description: "As a student frontend developer, my tasks included designing and developing responsive and user-friendly websites using modern technologies. I also actively participated in team collaboration to create efficient solutions together.",
     },
   ];
 
   const years = [2022, 2023, 2024];
 
   return (
-    <TracingBeam className="px-6">
-      <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <TracingBeam>
+      <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundImage: `url(${resumeBackground.src})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-12">My Resume</h1>
+          <h1 className="text-5xl font-bold tracking-tighter text-center text-gray-700 dark:text-white mb-12">My Resume</h1>
           
           <div className="relative">
             {years.map((year, index) => (
               <YearNode key={index} year={year} index={index} total={years.length} />
             ))}
-
             {items.map((item, index) => (
               <ResumeItem
                 key={index}
@@ -105,10 +98,10 @@ const ResumeItem = ({ icon, title, subtitle, date, description, position }: {
       transition={{ duration: 0.3 }}
       className={`mb-8 flex ${position === 'left' ? 'justify-start' : 'justify-end'} w-full`}
     >
-      <div className={`bg-white dark:bg-gray-800 shadow-lg rounded-[.40rem] overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-1 w-5/12 ${position === 'left' ? 'mr-8' : 'ml-8'}`}>
-        <div className="px-4 py-3 flex items-center">
-          <div className="text-[rgb(255,82,137)]/80">{icon}</div>
-          <h2 className="ml-2 text-xl font-semibold text-[rgb(255,82,137)]/80">{title}</h2>
+      <div className={`bg-white dark:bg-gray-800 min-h-48 group mb-12 shadow-lg rounded-[.40rem] overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-1 w-5/12 ${position === 'left' ? 'mr-8' : 'ml-8'}`}>
+        <div className="px-4 py-3 flex items-center group-hover:bg-[rgb(255,82,137)]/60 transition-colors duration-300">
+          <div className="text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{icon}</div>
+          <h2 className="ml-2 text-xl font-semibold tracking-tighter text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{title}</h2>
         </div>
         <Separator className="w-[90%] mx-auto"/>
         <div className="p-4">

@@ -17,10 +17,10 @@ const AboutMe = () => {
                 <p className="text-gray-700 p-6 text-left tracking-tight text-2xl">
                     Welcome to my little corner of the digital world! I’m a web design enthusiast with a heart that beats for all things tech. When I’m not lost in lines of code or crafting stunning websites, you’ll find me doodling away or dreaming up the next big idea. My life’s mission? To make the internet a more beautiful and functional place, one pixel at a time! ✨💻🎨             
                 </p>
-                <p className="text-gray-700 p-6 text-left text-2xl tracking-tight">If you’re as excited about tech and creativity as I am, let’s connect and create something amazing together!</p>
+                <p className="text-gray-700 p-6 text-left text-2xl tracking-tight mt-32">If you’re as excited about tech and creativity as I am, let’s connect and create something amazing together!</p>
               </div>
-              <div className="md:w-1/2 flex md:mr-6 flex-col items-center justify-center md:items-end mb-4 md:mb-0">
-                <div className="relative w-full h-[400px]">
+              <div className="md:w-[25rem] md:h-[35.7rem] flex md:mr-6 flex-col items-center justify-center md:items-end mb-4 md:mb-0">
+                <div className="relative w-full h-full">
                   <div className="inner">
                     <Image
                       src={me}
