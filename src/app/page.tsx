@@ -24,7 +24,7 @@ export default function Home() {
    <div id="myskills" className="scroll-mt-38">
      <MySkills />
    </div>
-   <div id="resume" className="scroll-mt-38">
+   <div id="resume" className="scroll-mt-38 mb-96">
      <Resume />
    </div>
    </>
