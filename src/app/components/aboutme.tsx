@@ -33,7 +33,7 @@ const AboutMe = () => {
                 
                 {/* Updated buttons */}
                 <div className="flex justify-center mt-6 space-x-4">
-                  <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/vaydominika" target="_blank" rel="noopener noreferrer">
                     <Button className="text-lg p-4 rounded-[0.40rem] bg-gradient-to-r from-[rgb(255,82,137)] to-[rgb(253,147,181)] text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_3px_0_rgba(255,_255,_255,_0.1)_inset] hover:bg-gradient-to-r hover:from-[rgb(255,82,137)] hover:to-[rgb(255,108,155)] hover:bg-opacity-90 transition-all duration-300 relative overflow-hidden group">
                       <span className="relative z-10 flex items-center">
                         <svg viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg">
