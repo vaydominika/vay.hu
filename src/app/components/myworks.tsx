@@ -20,11 +20,26 @@ const MyWorks = () => {
         className="absolute inset-0 z-0"
       />
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl font-bold mb-12 text-center tracking-tight">
-          <span className="inline-block bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text">
-            Crafted Creations
-          </span>
-        </h2>
+        <div className="flex items-center justify-center mb-12">
+          <div className="flex items-center">
+            {/* Left decorative element */}
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-blue-500 to-pink-500 mr-4"></div>
+            <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+            <div className="w-2 h-2 rounded-full bg-pink-500 mr-4"></div>
+
+            <h2 className="text-5xl font-bold text-center tracking-tight">
+              <span className="inline-block tracking-tighter bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text">
+                Crafted Creations
+              </span>
+            </h2>
+
+            {/* Right decorative element */}
+            <div className="w-2 h-2 rounded-full bg-blue-500 ml-4"></div>
+            <div className="w-3 h-3 rounded-full bg-pink-500 ml-2"></div>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent via-blue-500 to-pink-500 ml-4"></div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <Card key={project.id} className="overflow-hidden rounded-[.40rem] ">

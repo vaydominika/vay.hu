@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +9,14 @@ import me from '@/app/img/me.jpg'
 import { Button } from "@/components/ui/button"
 
 const AboutMe = () => {
+  const scrollToMyWorks = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const myWorksSection = document.getElementById('myworks');
+    if (myWorksSection) {
+      myWorksSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <h2 className='text-4xl font-extrabold mb-4 text-center'>Get to know <span className="bg-clip-text text-transparent bg-gradient-to-r from-[rgb(255,82,137)] to-[rgba(255,108,155,0.76)] italic">Me</span></h2>
@@ -21,9 +31,9 @@ const AboutMe = () => {
                 </p>
                 <p className="text-gray-700 p-6 text-left text-2xl tracking-tight">If you're as excited about tech and creativity as I am, let's connect and create something amazing together!</p>
                 
-                {/* Updated buttons with link */}
+                {/* Updated buttons */}
                 <div className="flex justify-center mt-6 space-x-4">
-                  <Link href="https://github.com/vaydominika" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
                     <Button className="text-lg p-4 rounded-[0.40rem] bg-gradient-to-r from-[rgb(255,82,137)] to-[rgb(253,147,181)] text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_3px_0_rgba(255,_255,_255,_0.1)_inset] hover:bg-gradient-to-r hover:from-[rgb(255,82,137)] hover:to-[rgb(255,108,155)] hover:bg-opacity-90 transition-all duration-300 relative overflow-hidden group">
                       <span className="relative z-10 flex items-center">
                         <svg viewBox="0 0 24 24" className="w-5 h-5 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +44,9 @@ const AboutMe = () => {
                       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                     </Button>
                   </Link>
-                  <Button variant="ghost" className="text-lg p-4 rounded-[0.40rem]">View Projects</Button>
+                  <Link href="#myworks" onClick={scrollToMyWorks}>
+                    <Button variant="ghost" className="text-lg p-4 rounded-[0.40rem]">View Projects</Button>
+                  </Link>
                 </div>
               </div>
               <div className="md:w-[25rem] md:h-[35.7rem] flex md:mr-6 flex-col items-center justify-center md:items-end mb-4 md:mb-0">
