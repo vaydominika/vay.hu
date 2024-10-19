@@ -3,11 +3,17 @@ import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 import myworksBackground from "@/app/svg/myworksbg.svg"
 
+import EvoCampusLoginPage from '@/app/img/EvoCampusLoginPage.png';
+import EvoCampusRegisterPage from '@/app/img/EvoCampusRegisterPage.png';
+import EvoCampusFeedPage from '@/app/img/EvoCampusFeedPage.png';
+import EvoCampusProfilePage from '@/app/img/EvoCampusProfilePage.png';
+
 const projects = [
-  { id: 1, title: "Project 1", image: "/path/to/image1.jpg", description: "Description of Project 1" },
-  { id: 2, title: "Project 2", image: "/path/to/image2.jpg", description: "Description of Project 2" },
-  { id: 3, title: "Project 3", image: "/path/to/image3.jpg", description: "Description of Project 3" },
-]
+  { id: 1, title: "Project 1", image: EvoCampusLoginPage, description: "Description of Project 1" },
+  { id: 2, title: "Project 2", image: EvoCampusRegisterPage, description: "Description of Project 2" },
+  { id: 3, title: "Project 3", image: EvoCampusFeedPage, description: "Description of Project 3" },
+  { id: 4, title: "Project 4", image: EvoCampusProfilePage, description: "Description of Project 4" }
+];
 
 const MyWorks = () => {
   return (
@@ -42,22 +48,23 @@ const MyWorks = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden rounded-[.40rem] ">
-              <CardContent className="p-0 relative">
-                <div className="relative h-48 md:h-64">
+            <Card key={project.id} className="overflow-hidden rounded-[.40rem] flex flex-col">
+              <CardContent className="p-0 relative flex-grow">
+                <div className="relative w-full">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
+                    width={500}
+                    height={300}
+                    layout="responsive"
                     className="transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="inline-block text-md tracking-tighter font-semibold mb-2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-[.40rem]">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
+                  <h3 className="text-md tracking-tighter font-semibold mb-2 text-white">
                     {project.title}
                   </h3>
-                  <p className="text-white drop-shadow-md">{project.description}</p>
+                  <p className="text-white text-sm">{project.description}</p>
                 </div>
               </CardContent>
             </Card>
