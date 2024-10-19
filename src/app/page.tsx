@@ -6,6 +6,7 @@ import NavigationBar from "./components/navigationbar";
 import AboutMe from "./components/aboutme";
 import MySkills from "./components/myskills";
 import Resume from "./components/resume";
+import MyWorks from './components/myworks';
 
 export default function Home() {
   useEffect(() => {
@@ -24,8 +25,11 @@ export default function Home() {
    <div id="myskills" className="scroll-mt-38">
      <MySkills />
    </div>
-   <div id="resume" className="scroll-mt-38 mb-96">
+   <div id="resume" className="scroll-mt-38">
      <Resume />
+   </div>
+   <div id="myworks" className='scroll-mt-38'>
+    <MyWorks />
    </div>
    </>
   );

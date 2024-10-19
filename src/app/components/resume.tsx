@@ -37,7 +37,11 @@ const Resume = () => {
     },
   ];
 
-  const years = [2022, 2023, 2024];
+  const years = [
+    { year: 2022, position: 0 },
+    { year: 2023, position: 31 },
+    { year: 2024, position: 83 }
+  ];
 
   return (
     <TracingBeam>
@@ -51,8 +55,8 @@ const Resume = () => {
           <h1 className="text-5xl font-bold tracking-tighter text-center text-gray-700 dark:text-white mb-12">My Resume</h1>
           
           <div className="relative">
-            {years.map((year, index) => (
-              <YearNode key={index} year={year} index={index} total={years.length} />
+            {years.map((yearData, index) => (
+              <YearNode key={index} year={yearData.year} position={yearData.position} />
             ))}
             {items.map((item, index) => (
               <ResumeItem
@@ -72,10 +76,9 @@ const Resume = () => {
   )
 }
 
-const YearNode = ({ year, index, total }: { year: number, index: number, total: number }) => {
-  const topPosition = (index / (total - 1)) * 100;
+const YearNode = ({ year, position }: { year: number, position: number }) => {
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${topPosition}%` }}>
+    <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${position}%` }}>
       <div className="bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md font-bold tracking-tighter">
         {year}
       </div>
