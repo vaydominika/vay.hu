@@ -9,10 +9,10 @@ import EvoCampusFeedPage from '@/app/img/EvoCampusFeedPage.png';
 import EvoCampusProfilePage from '@/app/img/EvoCampusProfilePage.png';
 
 const projects = [
-  { id: 1, title: "Login page design", image: EvoCampusLoginPage, description: "" },
-  { id: 2, title: "Register page design", image: EvoCampusRegisterPage, description: "" },
-  { id: 3, title: "Feed design", image: EvoCampusFeedPage, description: "" },
-  { id: 4, title: "Profile design", image: EvoCampusProfilePage, description: "" }
+  { id: 1, title: "Login page design", image: EvoCampusLoginPage, description: "EvoWeb's login page" },
+  { id: 2, title: "Register page design", image: EvoCampusRegisterPage, description: "EvoWeb's register page" },
+  { id: 3, title: "Feed design", image: EvoCampusFeedPage, description: "EvoWeb's feed page" },
+  { id: 4, title: "Profile design", image: EvoCampusProfilePage, description: "EvoWeb's profile page" }
 ];
 
 const MyWorks = () => {
