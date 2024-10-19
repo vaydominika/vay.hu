@@ -34,16 +34,16 @@ const MySkills = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36 max-w-6xl">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center tracking-tighter text-gray-700">Skills in <span className='italic'>Action</span></h2>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center tracking-tighter text-gray-700">Skills in <span className='italic'>Action</span></h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
-          <Card key={index} className="rounded-[.40rem] text-gray-700 w-full sm:w-11/12 md:w-10/12 lg:w-full mx-auto h-auto flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
+          <Card key={index} className="rounded-[.40rem] text-gray-700 w-full mx-auto h-auto flex flex-col bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/70 hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-col items-center">
               <skill.icon className="text-gray-700 text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[7rem] mt-4 sm:mt-6 md:mt-8" />
-              <CardTitle className="text-lg sm:text-xl text-center justify-center pt-8 sm:pt-12 md:pt-16 tracking-tight">{skill.title}</CardTitle>
+              <CardTitle className="text-base sm:text-lg md:text-xl text-center justify-center pt-4 sm:pt-8 md:pt-12 tracking-tight">{skill.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow flex items-center">
-              <p className="text-gray-600 text-sm sm:text-base">{skill.description}</p>
+              <p className="text-gray-600 text-xs sm:text-sm md:text-base">{skill.description}</p>
             </CardContent>
           </Card>
         ))}
@@ -57,9 +57,9 @@ const MySkills = () => {
       
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
         {languages.map((lang, index) => (
-          <Card key={index} className="rounded-[.40rem] w-full h-32 sm:h-40 flex flex-col items-center justify-center bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/50 hover:shadow-lg transition-shadow duration-300">
-            <lang.icon className={`text-4xl sm:text-5xl mb-3 ${lang.color}`} />
-            <p className="text-sm sm:text-base text-gray-600">{lang.name}</p>
+          <Card key={index} className="rounded-[.40rem] w-full h-24 sm:h-32 md:h-40 flex flex-col items-center justify-center bg-neutral-50 border-none shadow-md shadow-[rgb(255,82,137)]/50 hover:shadow-lg transition-shadow duration-300">
+            <lang.icon className={`text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 ${lang.color}`} />
+            <p className="text-xs sm:text-sm md:text-base text-gray-600">{lang.name}</p>
           </Card>
         ))}
       </div>

@@ -17,7 +17,7 @@ const projects = [
 
 const MyWorks = () => {
   return (
-    <section className="py-12 relative">
+    <section className="py-8 sm:py-12 relative">
       <Image
         src={myworksBackground}
         alt="Background"
@@ -46,7 +46,7 @@ const MyWorks = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project) => (
             <Card key={project.id} className="overflow-hidden rounded-[.40rem] flex flex-col">
               <CardContent className="p-0 relative flex-grow">
@@ -60,11 +60,11 @@ const MyWorks = () => {
                     className="transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
-                  <h3 className="text-md tracking-tighter font-semibold mb-2 text-white">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-2 sm:p-4">
+                  <h3 className="text-sm sm:text-md tracking-tighter font-semibold mb-1 sm:mb-2 text-white">
                     {project.title}
                   </h3>
-                  <p className="text-white text-sm">{project.description}</p>
+                  <p className="text-white text-xs sm:text-sm">{project.description}</p>
                 </div>
               </CardContent>
             </Card>
