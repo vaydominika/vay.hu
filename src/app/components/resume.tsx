@@ -107,7 +107,7 @@ const ResumeItem = ({ icon, title, subtitle, date, description, position }: {
           <div className="text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{icon}</div>
           <h2 className="ml-2 text-xl font-semibold tracking-tighter text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{title}</h2>
         </div>
-        <Separator className="w-[90%] mx-auto"/>
+        <Separator className="group-hover:hidden w-[90%] mx-auto"/>
         <div className="p-4">
           <p className="text-sm text-gray-600 dark:text-gray-300">{subtitle}</p>
           {date && <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{date}</p>}
