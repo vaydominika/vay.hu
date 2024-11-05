@@ -4,21 +4,25 @@ import { BiLogoTypescript, BiLogoJavascript, BiLogoReact, BiLogoNodejs } from 'r
 import { MdViewQuilt } from "react-icons/md"
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { SiNextdotjs } from "react-icons/si";
+import { FaFigma } from "react-icons/fa";
 import { cn } from '@/lib/utils';
 
 const MySkills = () => {
   const skills = [
     {
+      icon: HiOutlineDevicePhoneMobile,
       color: "orange-400",
       title: "Web Development",
       description: "I specialize in creating responsive websites that adapt seamlessly across devices, ensuring optimal user experiences on any screen size. With a focus on clean, efficient code, I build modern interfaces that are both visually appealing and highly functional. My goal is to deliver performance-driven designs that enhance usability and engagement.",
     },
     {
+      icon: BiLogoJavascript,
       color: "cyan-400",
       title: "JavaScript & TypeScript",
       description: "I focus on using JavaScript to create dynamic and interactive web applications, enhancing user experiences with responsive interfaces. Additionally, I leverage TypeScript to improve code quality and maintainability by utilizing static typing and advanced features. This combination allows me to develop scalable applications while ensuring flexibility and robustness in my code.",
     },
     {
+      icon: FaFigma,
       color: "green-400",
       title: "UI/UX Design",
       description: "I focus on UI/UX design to create intuitive and engaging user experiences. By understanding user behavior and applying design principles, I develop visually appealing interfaces that prioritize usability and accessibility. My aim is to blend aesthetics with functionality, ensuring that every interaction is seamless and enhances the overall user journey.",
@@ -37,34 +41,37 @@ const MySkills = () => {
     <div className="container mx-auto px-4 py-12 sm:py-24 md:py-36 max-w-6xl">
       <div className="relative flex justify-center">
         <div className="flex items-center gap-4">
-          <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-gray-300"></div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-gray-700">
+          <div className="h-[.2rem] w-16 rounded-full bg-gradient-to-r from-transparent to-green-300"></div>
+          <h2 className="text-2xl px-4 sm:text-3xl md:text-4xl font-bold tracking-tighter bg-gradient-to-r from-green-400 via-cyan-400 to-yellow-400 text-transparent bg-clip-text">
             Skills in <span className="italic">Action</span>
           </h2>
-          <div className="h-[2px] w-12 bg-gradient-to-l from-transparent to-gray-300"></div>
+          <div className="h-[.2rem] w-16 rounded-full bg-gradient-to-l from-transparent to-yellow-300"></div>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12">
         {skills.map((skill, index) => (
           <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-neutral-50 border-none shadow-md hover:shadow-xl transition-shadow duration-300 ${skill.color === 'orange-400' ? 'shadow-orange-400/40' : skill.color === 'cyan-400' ? 'shadow-cyan-400/40' : 'shadow-green-400/40'}`}>
             <div className='bg-neutral-50 w-full h-[40%]'>
-              <div className={`w-full h-full rounded-br-[1rem] flex items-center justify-center bg-${skill.color}`}>
+              <div className={cn("w-full h-full rounded-br-[1rem] flex items-center justify-center", {
+                "bg-orange-400": skill.color === "orange-400",
+                "bg-cyan-400": skill.color === "cyan-400",
+                "bg-green-400": skill.color === "green-400"
+              })}>
+                <div className='flex flex-col items-center justify-center'>
+                <skill.icon className={`text-3xl sm:text-4xl md:text-6xl mb-2 sm:mb-3 text-white text-center `} />
                 <p className="text-white text-xs sm:text-sm md:text-2xl font-bold text-center">{skill.title}</p>
+                </div>
               </div>
             </div>
-            <div className={`bg-${skill.color} w-full h-[60%]`}>
+            <div className={cn("w-full h-[60%]", {
+              "bg-orange-400": skill.color === "orange-400",
+              "bg-cyan-400": skill.color === "cyan-400", 
+              "bg-green-400": skill.color === "green-400"
+            })}>
               <div className='bg-neutral-50 rounded-tl-[1rem] w-full h-full'>
                 <p className="text-gray-600 text-xs sm:text-sm md:text-base p-4 pt-8 pb-48">{skill.description}</p>
               </div>
             </div>
-            {/*
-            <CardContent className="bg-neutral-50 flex-grow flex items-center rounded-tl-[2rem] pt-2">
-              <div className='w-full h-full'>
-                <p className="text-gray-600 text-xs sm:text-sm md:text-base">{skill.description}</p>
-              </div>
-              </CardContent>
-              */
-            }
           </Card>
         ))}
       </div>
