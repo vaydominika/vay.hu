@@ -1,0 +1,42 @@
+# .github/workflows/deploy.yml
+name: NextPipe-Apache
+
+on:
+  push:
+    branches:
+      - master  # Adjust this to the branch you want to trigger the deployment from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Zip the project
+      run: zip -r project.zip ./*
+
+    - name: Upload to server using SCP
+      uses: appleboy/scp-action@v0.1.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        password: ${{ secrets.SERVER_PASSWORD }}  
+        port: ${{ secrets.SERVER_PORT }}
+        source: "project.zip"
+        target: "/usr/lib/nextpipe/temp/"
+
+    - name: Run remote deployment script over SSH
+      uses: appleboy/ssh-action@v0.1.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        password: ${{ secrets.SERVER_PASSWORD }}  
+        port: ${{ secrets.SERVER_PORT }}
+        script: |
+          cd /usr/lib/nextpipe/temp/
+          unzip project.zip
+          npm install
+          npm run build
+          rsync -av --delete out/ /var/www/vay.hu/
