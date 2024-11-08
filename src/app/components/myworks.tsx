@@ -34,7 +34,7 @@ const MyWorks = () => {
             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#978779] to-[#584d42] mr-4"></div>
 
             <h2 className="text-5xl font-bold text-center tracking-tight">
-              <span className="inline-block tracking-tighter bg-gradient-to-r from-[#584d42] to-[#978779] text-transparent bg-clip-text">
+              <span className="inline-block tracking-tighter bg-gradient-to-r from-[#584d42] to-[#978779] text-transparent bg-clip-text p-1">
                 Crafted Creations
               </span>
             </h2>

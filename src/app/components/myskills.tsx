@@ -45,7 +45,7 @@ const MySkills = () => {
         <div className="flex items-center gap-4">
           <div className="h-[.2rem] w-16 rounded-full bg-gradient-to-r from-transparent to-[#584d42]"></div>
           <h2 className="text-2xl px-4 sm:text-3xl md:text-4xl font-bold tracking-tighter bg-gradient-to-r from-[#584d42] via-[#978779] to-[#d1c2ae] text-transparent bg-clip-text">
-            Skills in <span className="italic">Action</span>
+            Skills in <span className="italic p-1">Action</span>
           </h2>
           <div className="h-[.2rem] w-16 rounded-full bg-gradient-to-l from-transparent to-[#978779]"></div>
         </div>
