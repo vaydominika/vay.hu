@@ -53,7 +53,6 @@ const MySkills = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12">
         {skills.map((skill, index) => {
           const shadowColor = "shadow-gray-500/50";
-          
           return (
             <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-[#EADBC8] border-none shadow-md hover:shadow-xl transition-shadow duration-300 ${shadowColor}`}>
               <div className='bg-[#F5E8D8] w-full h-[40%]'>
