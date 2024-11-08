@@ -25,7 +25,7 @@ export const useTypewriter = (text: string, speed = 50) => {
 const Typewriter = ({ text, speed }: { text: string, speed: number }) => {
     const displayText = useTypewriter(text, speed);
   
-    return <p className="py-8 text-3xl text-primary/70 tracking-tighter">{displayText}</p>;
+    return <p className="py-8 text-3xl text-[rgba(151, 135, 121, .7)] tracking-tighter">{displayText}</p>;
 
   };
   

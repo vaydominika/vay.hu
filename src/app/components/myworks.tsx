@@ -29,20 +29,20 @@ const MyWorks = () => {
         <div className="flex items-center justify-center mb-12">
           <div className="flex items-center">
             {/* Left decorative element */}
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-blue-500 to-pink-500 mr-4"></div>
-            <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-            <div className="w-2 h-2 rounded-full bg-pink-500 mr-4"></div>
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#584d42] to-[#d1c2ae] mr-4"></div>
+            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#584d42] to-[#978779] mr-2"></div>
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#978779] to-[#584d42] mr-4"></div>
 
             <h2 className="text-5xl font-bold text-center tracking-tight">
-              <span className="inline-block tracking-tighter bg-gradient-to-r from-blue-500 to-pink-500 text-transparent bg-clip-text">
+              <span className="inline-block tracking-tighter bg-gradient-to-r from-[#584d42] to-[#978779] text-transparent bg-clip-text">
                 Crafted Creations
               </span>
             </h2>
 
             {/* Right decorative element */}
-            <div className="w-2 h-2 rounded-full bg-blue-500 ml-4"></div>
-            <div className="w-3 h-3 rounded-full bg-pink-500 ml-2"></div>
-            <div className="w-16 h-px bg-gradient-to-l from-transparent via-blue-500 to-pink-500 ml-4"></div>
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#978779] to-[#584d42] ml-4"></div>
+            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#584d42] to-[#978779] ml-2"></div>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent via-[#584d42] to-[#d1c2ae] ml-4"></div>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ const MyWorks = () => {
                     className="transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-2 sm:p-4">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#584d42]/30 to-transparent p-2 sm:p-4">
                   <h3 className="text-sm sm:text-md tracking-tighter font-semibold mb-1 sm:mb-2 text-white">
                     {project.title}
                   </h3>
