@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { BiLogoTypescript, BiLogoJavascript, BiLogoReact, BiLogoNodejs } from 'react-icons/bi'
-import { MdViewQuilt } from "react-icons/md"
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { SiNextdotjs } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
 import { FaFigma } from "react-icons/fa";
 import { cn } from '@/lib/utils';
 
@@ -35,8 +35,8 @@ const MySkills = () => {
     { name: "React", icon: BiLogoReact},
     { name: "Next.js", icon: SiNextdotjs},
     { name: "Node.js", icon: BiLogoNodejs},
-    { name: "Tailwind", icon: BiLogoNodejs},
-    { name: "Figma", icon: BiLogoNodejs}
+    { name: "Tailwind", icon: RiTailwindCssFill},
+    { name: "Figma", icon: FaFigma}
   ]
 
   return (
