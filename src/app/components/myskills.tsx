@@ -54,7 +54,7 @@ const MySkills = () => {
         {skills.map((skill, index) => {
           const shadowColor = "shadow-gray-500/50";
           return (
-            <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-[#EADBC8] border-none shadow-md hover:shadow-xl transition-shadow duration-300 ${shadowColor}`}>
+            <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-[#EADBC8] border-none shadow-md shadow-[#584d42]/50 hover:shadow-xl transition-shadow duration-300`}>
               <div className='bg-[#F5E8D8] w-full h-[40%]'>
                 <div className={cn("w-full h-full rounded-br-[1rem] flex items-center justify-center bg-[#EADBC8]")}>
                   <div className='flex flex-col items-center justify-center'>
@@ -74,13 +74,13 @@ const MySkills = () => {
       </div>
 
       <div className="flex items-center justify-center mt-16 mb-8">
-        <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
+        <div className="flex-grow h-px bg-[#584d42]/80 max-w-[100px] sm:max-w-[200px]"></div>
         <h3 className="text-2xl sm:text-3xl tracking-tighter font-bold mx-4 text-center text-[#584d42]">Technologies I Use</h3>
-        <div className="flex-grow h-px bg-gray-300 max-w-[100px] sm:max-w-[200px]"></div>
+        <div className="flex-grow h-px bg-[#584d42]/80 max-w-[100px] sm:max-w-[200px]"></div>
       </div>
       <div className="grid grid-cols-7 gap-6 justify-items-center items-center mx-auto">
         {languages.map((lang, index) => {
-          const shadowColor = "shadow-gray-500/50";
+          const shadowColor = "shadow-[#584d42]/50";
           
           return (
             <Card key={index} className={`${index % 7 === 0 ? 'rounded-tr-[4rem] rounded-bl-[4rem]' : 

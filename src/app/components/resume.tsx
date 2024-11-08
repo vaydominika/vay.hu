@@ -53,7 +53,7 @@ const Resume = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-center text-gray-700 dark:text-white mb-8 sm:mb-12">My Resume</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-center text-[#584d42] dark:text-white mb-8 sm:mb-12">My Resume</h1>
           
           <div className="relative">
             {years.map((yearData, index) => (
@@ -80,7 +80,7 @@ const Resume = () => {
 const YearNode = ({ year, position }: { year: number, position: number }) => {
   return (
     <div className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${position}%` }}>
-      <div className="bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md font-bold tracking-tighter">
+      <div className="bg-white dark:bg-[#978779] text-[#978779] dark:text-white rounded-full w-12 h-12 flex items-center justify-center shadow-md font-bold tracking-tighter">
         {year}
       </div>
     </div>
@@ -103,15 +103,15 @@ const ResumeItem = ({ icon, title, subtitle, date, description, position }: {
       className={`mb-8 flex ${position === 'left' ? 'justify-start' : 'justify-end'} w-full`}
     >
       <div className={`bg-white dark:bg-gray-800 min-h-48 group mb-12 shadow-lg rounded-[.40rem] overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-1 w-full sm:w-5/12 ${position === 'left' ? 'mr-0 sm:mr-8' : 'ml-0 sm:ml-8'}`}>
-        <div className="px-4 py-3 flex items-center group-hover:bg-[rgb(255,82,137)]/60 transition-colors duration-300">
-          <div className="text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{icon}</div>
-          <h2 className="ml-2 text-xl font-semibold tracking-tighter text-[rgb(255,82,137)]/80 group-hover:text-white transition-colors duration-300">{title}</h2>
+        <div className="px-4 py-3 flex items-center group-hover:bg-[#584d42] transition-colors duration-300">
+          <div className="text-[#978779] group-hover:text-white transition-colors duration-300">{icon}</div>
+          <h2 className="ml-2 text-xl font-semibold tracking-tighter text-[#978779] group-hover:text-white transition-colors duration-300">{title}</h2>
         </div>
         <Separator className="group-hover:hidden w-[90%] mx-auto"/>
         <div className="p-4">
-          <p className="text-sm text-gray-600 dark:text-gray-300">{subtitle}</p>
-          {date && <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{date}</p>}
-          {description && <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">{description}</p>}
+          <p className="text-sm text-[#978779] dark:text-gray-300">{subtitle}</p>
+          {date && <p className="text-sm text-[#ccc1b7] dark:text-gray-400 mt-1">{date}</p>}
+          {description && <p className="text-sm text-[#9e9287] dark:text-gray-300 mt-2">{description}</p>}
         </div>
       </div>
     </motion.div>
