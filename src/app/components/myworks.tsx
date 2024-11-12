@@ -48,7 +48,7 @@ const MyWorks = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden rounded-[.40rem] flex flex-col border-[#978779]/50">
+            <Card key={project.id} className="overflow-hidden rounded-[.40rem] flex flex-col border-[#978779]/80">
               <CardContent className="p-0 relative flex-grow">
                 <div className="relative w-full">
                   <Image

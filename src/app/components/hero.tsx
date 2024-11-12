@@ -3,7 +3,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Typewriter } from 'react-simple-typewriter'
-import backgroundimage from '@/app/img/aaabstract.png'
+import backgroundimage from '@/app/img/herobg.webp'
 import Link from 'next/link'
 
 const Hero = () => {

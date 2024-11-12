@@ -71,6 +71,11 @@ body {
   }
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #FFF8F0 inset; /* Match the background color */
+  box-shadow: 0 0 0 1000px #FFF8F0 inset; /* Match the background color */
+  transition: background-color 5000s ease-in-out 0s; /* Prevent background color change */
+}
 
 @layer base {
   * {

@@ -54,7 +54,7 @@ const MySkills = () => {
         {skills.map((skill, index) => {
           const shadowColor = "shadow-gray-500/50";
           return (
-            <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-[#EADBC8] border-none shadow-md shadow-[#584d42]/50 hover:shadow-xl transition-shadow duration-300`}>
+            <Card key={index} className={`rounded-[.40rem] overflow-hidden w-full mx-auto h-auto flex flex-col bg-[#EADBC8] border border-[#978779]/80 shadow-md shadow-[#584d42]/50 hover:shadow-xl transition-shadow duration-300`}>
               <div className='bg-[#F5E8D8] w-full h-[40%]'>
                 <div className={cn("w-full h-full rounded-br-[1rem] flex items-center justify-center bg-[#EADBC8]")}>
                   <div className='flex flex-col items-center justify-center'>
@@ -90,7 +90,7 @@ const MySkills = () => {
               index % 7 === 4 ? 'rounded-tl-[2rem] rounded-br-[2rem]' :
               index % 7 === 5 ? 'rounded-tl-[3rem] rounded-br-[3rem]' :
               index % 7 === 6 ? 'rounded-tl-[4rem] rounded-br-[4rem]' :
-              'rounded-[1.5rem]'} w-full h-24 sm:h-32 md:h-30 flex flex-col items-center justify-center bg-[#F5E8D8] border-none shadow-md ${shadowColor} hover:shadow-lg transition-shadow duration-300`}>
+              'rounded-[1.5rem]'} w-full h-24 sm:h-32 md:h-30 flex flex-col items-center justify-center bg-[#F5E8D8] border border-[#978779]/80 shadow-md ${shadowColor} hover:shadow-lg transition-shadow duration-300`}>
               <lang.icon className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 text-[#978779]" />
               <p className="text-xs sm:text-sm md:text-base text-[#978779]">{lang.name}</p>
             </Card>

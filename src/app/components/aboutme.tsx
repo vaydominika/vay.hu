@@ -21,7 +21,7 @@ const AboutMe = () => {
     <>
       <h2 className='text-3xl sm:text-4xl font-extrabold mb-4 text-center text-[#584d42]'>Get to know <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#584d42] to-[#978779] italic pr-2">Me</span></h2>
       <div className="w-full max-w-5xl mx-auto mt-8 movingborder px-4 sm:px-6 lg:px-8">
-        <Card className='border-none shadow-none bg-[#F5E8D8] rounded-[0.40rem]'>
+        <Card className='border-[#978779]/80 shadow-none bg-[#F5E8D8] rounded-[0.40rem]'>
           <CardContent className="p-4 sm:p-6 inner">
           <p className="text-[#584d42] p-4 sm:p-6 text-center font-semibold text-xl sm:text-2xl">🌟 Hi there! I'm Dominika 🌟</p>
             <div className="flex flex-col md:flex-row">
