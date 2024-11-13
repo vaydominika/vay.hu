@@ -89,7 +89,7 @@ const NavigationBar = () => {
             </div>
           </div>
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-[#584d42] to-[#978779] hover:bg-gradient-to-r hover:from-[#584d42] hover:to-[#978779] hover:bg-opacity-90 transition-all duration-300 px-3 py-2 rounded-[0.40rem] text-sm font-medium ml-auto shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_3px_0_rgba(255,_255,_255,_0.1)_inset] relative overflow-hidden group">
+            <Button className="bg-gradient-to-r from-[#584d42] to-[#978779] hover:bg-gradient-to-r hover:from-[#584d42] hover:to-[#978779] hover:bg-opacity-90 transition-all duration-300 px-3 py-2 rounded-[.40rem] text-sm font-medium ml-auto shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_3px_0_rgba(255,_255,_255,_0.1)_inset] relative overflow-hidden group">
               <span className="relative z-10">Work Together</span>
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </Button>

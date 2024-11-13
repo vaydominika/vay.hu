@@ -20,19 +20,19 @@ export default function Home() {
    <div id="home" className="scroll-mt-28">
      <Hero/>
    </div>
-   <div id="aboutme" className="scroll-mt-28">
+   <div id="aboutme" className="scroll-mt-28 mb-32">
      <AboutMe/>
    </div>
-   <div id="myskills" className="scroll-mt-38">
+   <div id="myskills" className="scroll-mt-28 mb-32">
      <MySkills />
    </div>
-   <div id="resume" className="scroll-mt-38">
+   <div id="resume" className="scroll-mt-28 mb-32">
      <Resume />
    </div>
-   <div id="myworks" className='scroll-mt-38'>
+   <div id="myworks" className="scroll-mt-28">
     <MyWorks />
    </div>
-   <div id="worktogether" className='scrool-mt-38'>
+   <div id="worktogether" className="scroll-mt-28">
     <Worktogether />
    </div>
    </>
