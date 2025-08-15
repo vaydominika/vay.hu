@@ -82,7 +82,7 @@ export default function Navbar() {
                 color="var(--secondary-color)"
                 textColor="var(--third-color)"
                 borderRadius="3rem"
-                className="font-semibold h-[3rem] translate-y-[-2px] nav-item relative"
+                className="font-semibold h-[3rem] translate-y-[-2px] nav-item relative cursor-pointer"
               >
                 {item.name}
               </Button>
@@ -92,7 +92,7 @@ export default function Navbar() {
                 onClick={(e) =>
                   scrollToSection(item.href, index, e.currentTarget)
                 }
-                className="px-4 text-third font-medium relative group nav-item"
+                className="px-4 text-third font-medium relative group nav-item cursor-pointer"
               >
                 {item.name}
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
