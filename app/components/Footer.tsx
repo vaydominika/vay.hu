@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-[1920px] h-[250px] bg-gradient-to-r from-third to-secondary relative overflow-hidden">
+    <footer className="w-screen h-[250px] bg-gradient-to-br from-third to-secondary relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-8 left-8 w-16 h-16 border border-white rounded-full"></div>

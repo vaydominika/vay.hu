@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 
 export default function WorkTogetherPage() {
   return (
-    <div id="work-together" className="w-[1920px] h-[1080px] bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+    <div id="work-together" className="w-screen h-[1080px] bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
       <Navbar />
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

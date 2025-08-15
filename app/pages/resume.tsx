@@ -51,7 +51,7 @@ export default function ResumePage() {
   ];
 
   return (
-    <div id="resume" className="w-[1920px] h-[2250px] bg-gradient-to-br from-primary to-secondary relative">
+    <div id="resume" className="w-screen h-[2250px] bg-gradient-to-br from-primary to-secondary relative">
       <Navbar />
       {/* Header Section */}
       <div className="h-[400px] bg-gradient-to-r from-third to-secondary flex items-center justify-center relative overflow-hidden">

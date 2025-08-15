@@ -76,7 +76,7 @@ export default function WorksPage() {
   const categories = ["All", "Full Stack", "Frontend", "Backend", "Design"];
 
   return (
-    <div id="works" className="w-[1920px] h-[3340px] bg-gradient-to-br from-primary to-secondary relative">
+    <div id="works" className="w-screen h-[3340px] bg-gradient-to-br from-primary to-secondary relative">
       <Navbar />
       {/* Hero Section */}
       <div className="h-[500px] bg-gradient-to-r from-third to-secondary flex items-center justify-center relative overflow-hidden">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "./ui";
 
 export default function Navbar() {
@@ -15,41 +15,68 @@ export default function Navbar() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: "0px", width: "0px" });
+  const navLinksRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (href: string, index: number, target: HTMLElement, silent: boolean = false) => {
+  const moveIndicator = (target: HTMLElement) => {
+    if (!navLinksRef.current) return;
+    const navContainer = navLinksRef.current;
+    const targetRect = target.getBoundingClientRect();
+    const containerRect = navContainer.getBoundingClientRect();
+    setIndicatorStyle({
+      left: `${targetRect.left - containerRect.left}px`,
+      width: `${targetRect.width}px`,
+    });
+  };
+
+  const scrollToSection = (
+    href: string,
+    index: number,
+    target: HTMLElement,
+    silent: boolean = false
+  ) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     if (!silent) {
       setActiveIndex(index);
-    }
-
-    const navContainer = target.closest(".nav-links") as HTMLElement;
-    if (navContainer) {
-      const targetRect = target.getBoundingClientRect();
-      const containerRect = navContainer.getBoundingClientRect();
-      if (!silent) {
-      setIndicatorStyle({
-        left: `${targetRect.left - containerRect.left}px`,
-        width: `${targetRect.width}px`,
-      });
-      }
+      moveIndicator(target);
     }
   };
 
+  // Inicializálás
   useEffect(() => {
     const activeEl = document.querySelector(".nav-links > .nav-item") as HTMLElement;
-    if (activeEl) {
-      const container = activeEl.parentElement as HTMLElement;
-      const rect = activeEl.getBoundingClientRect();
-      const contRect = container.getBoundingClientRect();
-      setIndicatorStyle({
-        left: `${rect.left - contRect.left}px`,
-        width: `${rect.width}px`,
-      });
-    }
+    if (activeEl) moveIndicator(activeEl);
   }, []);
+
+  // Scroll figyelés
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3; // offset kicsit lejjebb
+
+      let currentIndex = 0;
+      navItems.forEach((item, index) => {
+        const section = document.querySelector(item.href) as HTMLElement;
+        if (section) {
+          if (scrollPosition >= section.offsetTop) {
+            currentIndex = index;
+          }
+        }
+      });
+
+      if (currentIndex !== activeIndex) {
+        setActiveIndex(currentIndex);
+        const targetButton = navLinksRef.current?.querySelectorAll<HTMLElement>(".nav-item")[currentIndex];
+        if (targetButton) {
+          moveIndicator(targetButton);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeIndex, navItems]);
 
   return (
     <nav
@@ -66,9 +93,12 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex-1 flex items-center justify-center gap-8 relative nav-links">
+        <div
+          ref={navLinksRef}
+          className="flex-1 flex items-center justify-center gap-8 relative nav-links"
+        >
           <span
-            className="absolute bottom-2 h-[2px] bg-secondary transition-all duration-300 ease-out"
+            className="absolute bottom-2 h-[2px] bg-third/50 transition-all duration-300 ease-out"
             style={indicatorStyle}
           />
 
@@ -77,7 +107,7 @@ export default function Navbar() {
               <Button
                 key={index}
                 onClick={(e) =>
-                  scrollToSection(item.href, index, e.currentTarget, true)
+                  scrollToSection(item.href, index, e.currentTarget)
                 }
                 color="var(--secondary-color)"
                 textColor="var(--third-color)"
@@ -95,7 +125,7 @@ export default function Navbar() {
                 className="px-4 text-third font-medium relative group nav-item cursor-pointer"
               >
                 {item.name}
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-third/50 transition-all duration-300 ease-out group-hover:w-full"></span>
               </button>
             )
           )}

@@ -19,12 +19,14 @@ const Card: React.FC<CardProps> = ({
   className = '',
   onClick,
 }) => {
+  const isGradient = backgroundColor.includes('gradient');
+  
   return (
     <div
       onClick={onClick}
       className={`transition-all duration-200 ease-in-out ${onClick ? 'cursor-pointer' : ''} ${className}`}
       style={{
-        backgroundColor: backgroundColor,
+        [isGradient ? 'background' : 'backgroundColor']: backgroundColor,
         borderRadius: borderRadius,
         padding: padding,
         boxShadow: shadow ? '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)' : 'inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)',
