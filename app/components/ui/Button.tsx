@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
         borderRadius: borderRadius,
         boxShadow:
           customShadow ||
-          '0 2px 2px 0 rgba(0, 0, 0, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)',
+          '0 2px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)',
       }}
       {...rest}
     >

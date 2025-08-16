@@ -7,10 +7,12 @@ import ResumePage from './pages/resume';
 import WorksPage from './pages/works';
 import WorkTogetherPage from './pages/work-together';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
     <main className="w-full">
+      <Navbar />
       <HomePage />
       <AboutPage />
       <SkillsPage />

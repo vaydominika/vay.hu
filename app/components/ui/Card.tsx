@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({
         [isGradient ? 'background' : 'backgroundColor']: backgroundColor,
         borderRadius: borderRadius,
         padding: padding,
-        boxShadow: shadow ? '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)' : 'inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)',
+        boxShadow: shadow ? '0 2px 4px 0px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)' : 'inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)',
       }}
     >
       {children}

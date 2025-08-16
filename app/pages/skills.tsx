@@ -1,74 +1,106 @@
 "use client";
 
-import { Button, Card } from '../components/ui';
-import Navbar from '../components/Navbar';
+import { Card } from "../components/ui";
 
 export default function SkillsPage() {
   const skills = [
     {
       bgColor: "var(--react-color)",
       svg: "/svg/reacticon.svg",
-      description: "Modern React with Hooks, Context, and TypeScript"
+      description:
+        "A flexible JavaScript library for building fast, modern web apps through reusable components. It makes crafting interactive UIs straightforward and enjoyable, while its huge ecosystem and active community make it easy to scale from small projects to complex, production-ready applications.",
     },
     {
       bgColor: "var(--angular-color)",
       svg: "/svg/angularicon.svg",
-      description: "Angular 17+, RxJS, and Angular Material"
+      description:
+        "A full-featured framework built by Google that comes with everything you need—routing, state management, testing, and more—already included. It’s designed for building large, structured, and reliable applications where consistency, scalability, and long-term maintainability really matter.",
     },
     {
       bgColor: "var(--tailwind-color)",
       svg: "/svg/tailwindicon.svg",
-      description: "Utility-first CSS framework for rapid UI development"
+      description:
+        "A utility-first CSS framework that lets you style your applications using small, composable classes instead of writing custom CSS for everything. It makes designing responsive, consistent, and customizable interfaces much faster, while still giving you the flexibility to create unique designs when needed.",
     },
     {
       bgColor: "var(--typescript-color)",
       svg: "/svg/typescripticon.svg",
-      description: "Typed JavaScript for better development experience"
+      description:
+        "JavaScript’s strongly typed superset that brings safety, structure, and clarity to your code. It catches errors early, improves collaboration on larger projects, and makes it easier to maintain and refactor applications as they grow in size and complexity.",
     },
     {
       bgColor: "var(--csharp-color)",
       svg: "/svg/csharpicon.svg",
-      description: ".NET Core, ASP.NET, and C# development"
+      description:
+        "A versatile programming language developed by Microsoft that’s used to build everything from enterprise web apps and desktop software to cloud solutions. With strong typing, modern features, and powerful frameworks, it offers reliability, productivity, and flexibility for developers.",
     },
     {
       bgColor: "var(--figma-color)",
       svg: "/svg/figmaicon.svg",
-      description: "UI/UX design and prototyping"
-    }
+      description:
+        "A collaborative, browser-based design tool that helps teams turn ideas into sleek, interactive prototypes. Its real-time collaboration, easy sharing, and plugin ecosystem make it ideal for creating design systems and bridging the gap between designers and developers.",
+    },
   ];
 
   return (
-    <div id="skills" className="w-screen h-[1080px] relative overflow-hidden bg-primary">
-      <Navbar />   
-      {/* Header */}
-      <div className="relative z-10 m-8 text-center" style={{ backgroundImage: 'url(/svg/skillsinactiontextbg.svg)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div
+      id="skills"
+      className="w-screen h-[1000px] relative overflow-hidden bg-primary"
+    >
+      <div
+        className="relative z-10 m-8 text-center"
+        style={{
+          backgroundImage: "url(/svg/skillsinactiontextbg.svg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <h1 className="text-6xl font-bold text-primary p-6">
-          Skills in <span className="italic" style={{ fontFamily: 'Quicky Nick, cursive' }}>Action</span>
+          Skills in{" "}
+          <span
+            className="italic"
+            style={{ fontFamily: "Quicky Nick, cursive" }}
+          >
+            Action
+          </span>
         </h1>
       </div>
-      
-      {/* Skills Grid */}
+
       <div className="relative z-10 px-16 mx-auto max-w-[1400px]">
-        <div className="grid grid-cols-3 gap-8 w-full">
+        <div className="grid grid-cols-3 gap-8 w-full relative z-10">
           {skills.map((skill) => (
-            <Card
-              backgroundColor={skill.bgColor}
-              borderRadius="1.5rem"
-              padding="2rem"
-              className="text-center hover:scale-105 transition-transform duration-300 relative"
-            >
-              {/* SVG Icon positioned at top left */}
-              <div className="absolute top-4 left-4 w-12 h-12">
-                <img 
-                  src={skill.svg} 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              
-              <p className="text-third/80 text-sm leading-relaxed">
-                {skill.description}
-              </p>
-            </Card>
+            <div key={skill.svg} className="relative group">
+              <Card
+                backgroundColor={skill.bgColor}
+                borderRadius="1.5rem"
+                padding=".8rem"
+                className="relative peer text-left hover:scale-105 transition-transform duration-300 flex items-start gap-4 z-10 h-84 overflow-hidden"
+              >
+                <div className="absolute inset-0 rounded-2xl border-animation opacity-0 group-hover:opacity-100"></div>
+
+                <div className="w-20 h-20 flex-shrink-0">
+                  <img
+                    src={skill.svg}
+                    className="w-full h-full object-contain"
+                    alt={skill.description}
+                  />
+                </div>
+
+                <p className="text-third/90 text-lg leading-relaxed flex-1 py-1">
+                  {skill.description}
+                </p>
+              </Card>
+
+              <div 
+                className="absolute inset-0 -m-1 rounded-[1.7rem] opacity-0 peer-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  transform: 'scale(1.05)',
+                  zIndex: 1,
+                  background: 'conic-gradient(from var(--gradient-rotation, 0deg), var(--react-color), var(--angular-color), var(--tailwind-color), var(--typescript-color), var(--csharp-color), var(--figma-color), var(--react-color))',
+                }}
+              ></div>
+            </div>
           ))}
         </div>
       </div>

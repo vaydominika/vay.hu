@@ -83,7 +83,7 @@ export default function Navbar() {
       className="fixed top-[30px] left-[260px] right-[260px] z-50 h-[4rem] bg-primary rounded-full"
       style={{
         boxShadow:
-          "0 2px 2px 0 rgba(0, 0, 0, 0.05), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)",
+          "0 2px 2px 0px rgba(0, 0, 0, 0.05), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)",
       }}
     >
       <div className="flex items-center h-full px-16">

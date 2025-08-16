@@ -4,18 +4,16 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Global Theme Colors */
   --primary-color: #FAF9F6;
   --secondary-color: #E6B8C2;
   --third-color: #1B1F3B;
   
-  /* Skill Colors */
-  --react-color: #61DAFB;
-  --angular-color: #E3086F;
-  --tailwind-color: #38BDF8;
-  --typescript-color: #3178C6;
-  --csharp-color: #390091;
-  --figma-color: #0ACF83;
+  --react-color: #cff2fc;
+  --angular-color: #ffc6e1;
+  --tailwind-color: #bde9fc;
+  --typescript-color: #c6e6ff;
+  --csharp-color: #e3c2fc;
+  --figma-color: #d0ffdb;
 }
 
 @theme inline {
@@ -25,7 +23,6 @@
   --font-mono: var(--font-geist-mono);
   --font-manrope: var(--font-manrope);
   
-  /* Custom Colors */
   --color-primary: var(--primary-color);
   --color-secondary: var(--secondary-color);
   --color-third: var(--third-color);
@@ -46,4 +43,13 @@ html, body {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+@keyframes spin {
+  0% {
+    --gradient-rotation: 0deg;
+  }
+  100% {
+    --gradient-rotation: 360deg;
+  }
 }
