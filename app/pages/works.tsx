@@ -2,6 +2,6 @@
 
 export default function WorksPage() {
   return (
-    <div></div>
+    <div className="w-screen h-[1080px] relative overflow-hidden bg-primary"></div>
   );
 }
