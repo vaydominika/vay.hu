@@ -45,6 +45,11 @@ body {
   color: var(--foreground);
 }
 
+p {
+  color: var(--third-color);
+  font-weight: light;
+}
+
 @keyframes spin {
   0% {
     --gradient-rotation: 0deg;
