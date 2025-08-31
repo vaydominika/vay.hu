@@ -1,5 +1,7 @@
 "use client";
 
+import Divider from "./ui/Divider";
+
 export default function Footer() {
   const navItems = [
     { name: "Home", href: "#home" },
@@ -18,13 +20,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-screen h-[350px] bg-gradient-to-br from-third to-secondary relative overflow-hidden"> 
+    <footer className="w-screen h-[350px] bg-[var(--primary-color)] relative overflow-hidden"> 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-16">
+        <Divider />
         <div className="mb-12">
           <img 
             src="/svg/signature.svg" 
             alt="Vay Dominika Signature" 
-            className="h-24 w-auto filter brightness-0 invert"
+            className="h-24 w-auto"
           />
         </div>
         
@@ -34,7 +37,7 @@ export default function Footer() {
               <button
                 key={index}
                 onClick={() => scrollToSection(item.href)}
-                className="text-white/80 hover:text-white transition-colors text-lg font-medium px-4 py-2"
+                className="text-[var(--third-color)]/80 hover:text-[var(--third-color)] transition-colors text-lg font-medium px-4 py-2"
               >
                 {item.name}
               </button>
@@ -42,9 +45,9 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="w-4xl h-px bg-white/30 mb-8"></div>
+        <Divider/>
         <div className="text-center">
-          <p className="text-white/60 text-sm">
+          <p className="text-[var(--third-color)]/60 text-sm">
             © 2025 Vay Dominika
           </p>
         </div>
