@@ -71,11 +71,20 @@ export default function SkillsPage() {
         <div className="grid grid-cols-3 gap-8 w-full relative z-10">
           {skills.map((skill) => (
             <div key={skill.svg} className="relative group">
+              <div className="-z-10 relative group">
+                <div className="absolute w-full h-full top-0 left-0 overflow-hidden scale-100 group-hover:scale-[1.07] rounded-[1.7rem] transition-all duration-300">
+                <div className="absolute opacity-0 group-hover:opacity-100 w-full h-full top-0 left-0 rounded-full scale-[2] animate-[spin_5s_linear_infinite]"
+                  style={{
+                    background: `conic-gradient(from var(--gradient-rotation, 0deg), ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor})`,
+                  }}
+                
+                ></div>
+                </div>
               <Card
                 backgroundColor={skill.bgColor}
                 borderRadius="1.5rem"
                 padding=".8rem"
-                className="relative peer text-left hover:scale-105 transition-transform duration-300 flex items-start gap-4 z-10 h-84 overflow-hidden"
+                className="relative peer text-left group-hover:scale-105 transition-transform duration-300 flex items-start gap-4 z-10 h-84 overflow-hidden"
               >
                 <div className="absolute inset-0 rounded-2xl border-animation opacity-0 group-hover:opacity-100"></div>
 
@@ -91,15 +100,7 @@ export default function SkillsPage() {
                   {skill.description}
                 </p>
               </Card>
-
-              <div 
-                className="absolute inset-0 -m-1 rounded-[1.7rem] opacity-0 peer-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  transform: 'scale(1.05)',
-                  zIndex: 1,
-                  background: 'conic-gradient(from var(--gradient-rotation, 0deg), var(--react-color), var(--angular-color), var(--tailwind-color), var(--typescript-color), var(--csharp-color), var(--figma-color), var(--react-color))',
-                }}
-              ></div>
+              </div>
             </div>
           ))}
         </div>
