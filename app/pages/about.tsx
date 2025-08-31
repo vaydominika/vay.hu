@@ -1,8 +1,25 @@
 "use client";
 
+import { useEffect, useState } from 'react';
 import { Button, Card } from '../components/ui';
 
 export default function AboutPage() {
+  const frames = [
+    '/svg/gettoknowmeframe1.svg',
+    '/svg/gettoknowmeframe2.svg',
+    '/svg/gettoknowmeframe3.svg',
+    '/svg/gettoknowmeframe4.svg',
+  ];
+
+  const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentFrameIndex((prevIndex) => (prevIndex + 1) % frames.length);
+    }, 400);
+
+    return () => clearInterval(intervalId);
+  }, [frames.length]);
   return (
     <div id="about" className="w-screen h-[1080px] relative overflow-hidden bg-primary" style={{ backgroundImage: 'url(/svg/gettoknowmebg.svg)' }}>
       <div className="pt-[19px] text-center">
@@ -51,13 +68,19 @@ export default function AboutPage() {
               </div>
             </div>
             
-            {/* Right Side - Image */}
             <div className="flex justify-center">
-              <img 
-                src="/svg/gettoknowmeframe.svg" 
-                alt="Dominika" 
-                className="w-full max-w-md h-auto"
-              />
+              <div className="relative w-[496px] h-[661px] overflow-visible">
+                <img
+                  src="/svg/pic/me.png"
+                  alt="Dominika"
+                  className="absolute inset-0 w-[400px] h-[550px] object-cover rounded-[1.5rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+                <img
+                  src={frames[currentFrameIndex]}
+                  alt="Decorative frame"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] object-contain pointer-events-none"
+                />
+              </div>
             </div>
           </div>
         </Card>
