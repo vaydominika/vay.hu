@@ -21,22 +21,22 @@ export default function AboutPage() {
     return () => clearInterval(intervalId);
   }, [frames.length]);
   return (
-    <div id="about" className="w-screen h-[1080px] relative overflow-hidden bg-primary" style={{ backgroundImage: 'url(/svg/gettoknowmebg.svg)' }}>
+    <div id="about" className="w-screen h-screen relative overflow-hidden bg-primary" style={{ backgroundImage: 'url(/svg/gettoknowmebg.svg)' }}>
       <div className="pt-[19px] text-center">
-        <h1 className="text-[64px] font-bold text-third text-center mb-6">
+        <h1 className="text-[54px] font-bold text-third text-center mb-6">
           Get to know <span className="italic bg-gradient-to-br from-secondary to-[#4A55A1] bg-clip-text text-transparent pr-1">me</span>
         </h1>
         
         <Card
           backgroundColor="linear-gradient(135deg, #F5ECEA 0%, #ECEFF8 100%)"
           borderRadius="2rem"
-          padding="3rem"
-          className="max-w-6xl mx-auto">
+          padding="2rem"
+          className="max-w-5xl mx-auto">
           <h3 className="text-4xl font-bold text-center bg-gradient-to-r from-third to-[#4A55A1] bg-clip-text text-transparent mb-6">
             Hi there! I'm Dominika
           </h3>
 
-          <div className="grid grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-2 gap-8 items-center">
             <div>
               <div className="space-y-4 text-2xl text-third/80 leading-relaxed text-left bg-gradient-to-b from-third to-[#4A55A1] bg-clip-text">
                 <p>
@@ -69,16 +69,16 @@ export default function AboutPage() {
             </div>
             
             <div className="flex justify-center">
-              <div className="relative w-[496px] h-[661px] overflow-visible">
+              <div className="relative w-[420px] h-[550px] overflow-visible">
                 <img
                   src="/svg/pic/me.png"
                   alt="Dominika"
-                  className="absolute inset-0 w-[400px] h-[550px] object-cover rounded-[1.5rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  className="absolute inset-0 w-[420px] h-[570px] object-cover rounded-[1.5rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 />
                 <img
                   src={frames[currentFrameIndex]}
                   alt="Decorative frame"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] object-contain pointer-events-none"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[240%] h-[140%] object-contain pointer-events-none scale-120"
                 />
               </div>
             </div>

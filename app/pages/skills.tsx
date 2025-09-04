@@ -8,44 +8,44 @@ export default function SkillsPage() {
       bgColor: "var(--react-color)",
       svg: "/svg/reacticon.svg",
       description:
-        "A flexible JavaScript library for building fast, modern web apps through reusable components. It makes crafting interactive UIs straightforward and enjoyable, while its huge ecosystem and active community make it easy to scale from small projects to complex, production-ready applications.",
+        "Met React rebuilding a side project into a SPA.",
     },
     {
       bgColor: "var(--angular-color)",
       svg: "/svg/angularicon.svg",
       description:
-        "A full-featured framework built by Google that comes with everything you need—routing, state management, testing, and more—already included. It’s designed for building large, structured, and reliable applications where consistency, scalability, and long-term maintainability really matter.",
+        "I met Angular on a large admin dashboard at work.",
     },
     {
       bgColor: "var(--tailwind-color)",
       svg: "/svg/tailwindicon.svg",
       description:
-        "A utility-first CSS framework that lets you style your applications using small, composable classes instead of writing custom CSS for everything. It makes designing responsive, consistent, and customizable interfaces much faster, while still giving you the flexibility to create unique designs when needed.",
+        "Picked up Tailwind while prototyping UI ideas.",
     },
     {
       bgColor: "var(--typescript-color)",
       svg: "/svg/typescripticon.svg",
       description:
-        "JavaScript’s strongly typed superset that brings safety, structure, and clarity to your code. It catches errors early, improves collaboration on larger projects, and makes it easier to maintain and refactor applications as they grow in size and complexity.",
+        "I adopted TypeScript after a few painful runtime bugs.",
     },
     {
       bgColor: "var(--csharp-color)",
       svg: "/svg/csharpicon.svg",
       description:
-        "A versatile programming language developed by Microsoft that’s used to build everything from enterprise web apps and desktop software to cloud solutions. With strong typing, modern features, and powerful frameworks, it offers reliability, productivity, and flexibility for developers.",
+        "Learned C# building backend APIs and tools.",
     },
     {
       bgColor: "var(--figma-color)",
       svg: "/svg/figmaicon.svg",
       description:
-        "A collaborative, browser-based design tool that helps teams turn ideas into sleek, interactive prototypes. Its real-time collaboration, easy sharing, and plugin ecosystem make it ideal for creating design systems and bridging the gap between designers and developers.",
+        "Started using Figma to sync design and dev.",
     },
   ];
 
   return (
     <div
       id="skills"
-      className="w-screen h-[1000px] relative overflow-hidden bg-primary"
+      className="w-screen relative overflow-hidden bg-primary pb-16"
     >
       <div
         className="relative z-10 m-8 text-center"
@@ -67,12 +67,13 @@ export default function SkillsPage() {
         </h1>
       </div>
 
-      <div className="relative z-10 px-16 mx-auto max-w-[1400px]">
-        <div className="grid grid-cols-3 gap-8 w-full relative z-10">
+      <div className="relative z-10 px-16 mx-auto max-w-[1400px]"
+      >
+        <div className="grid grid-cols-6 gap-6 w-full relative z-10">
           {skills.map((skill) => (
             <div key={skill.svg} className="relative group">
               <div className="-z-10 relative group">
-                <div className="absolute w-full h-full top-0 left-0 overflow-hidden scale-100 group-hover:scale-[1.07] rounded-[1.7rem] transition-all duration-300">
+                <div className="absolute w-full h-full top-0 left-0 overflow-hidden scale-100 group-hover:scale-[1.06] rounded-[1.5rem] transition-all duration-300">
                 <div className="absolute opacity-0 group-hover:opacity-100 w-full h-full top-0 left-0 rounded-full scale-[2] animate-[spin_5s_linear_infinite]"
                   style={{
                     background: `conic-gradient(from var(--gradient-rotation, 0deg), ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor})`,
@@ -83,12 +84,12 @@ export default function SkillsPage() {
               <Card
                 backgroundColor={skill.bgColor}
                 borderRadius="1.5rem"
-                padding=".8rem"
-                className="relative peer text-left group-hover:scale-105 transition-transform duration-300 flex items-start gap-4 z-10 h-84 overflow-hidden"
+                padding=".2rem"
+                className="relative peer group-hover:scale-104 transition-transform duration-300 z-10 overflow-visible h-65 flex items-center justify-center"
               >
-                <div className="absolute inset-0 rounded-2xl border-animation opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 rounded-2xl border-animation opacity-0 group-hover:opacity-100 z-0"></div>
 
-                <div className="w-20 h-20 flex-shrink-0">
+                <div className="absolute -top-3 -left-3 w-16 h-16 z-20">
                   <img
                     src={skill.svg}
                     className="w-full h-full object-contain"
@@ -96,9 +97,11 @@ export default function SkillsPage() {
                   />
                 </div>
 
-                <p className="text-third/90 text-lg leading-relaxed flex-1 py-1">
-                  {skill.description}
-                </p>
+                <div className="relative z-10 h-full w-full flex px-2 py-14">
+                  <p className="text-third/90 text-md leading-relaxed max-w-[90%]">
+                    {skill.description}
+                  </p>
+                </div>
               </Card>
               </div>
             </div>
