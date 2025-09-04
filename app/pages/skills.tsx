@@ -5,37 +5,43 @@ import { Card } from "../components/ui";
 export default function SkillsPage() {
   const skills = [
     {
-      bgColor: "var(--react-color)",
+      borderColor: "var(--react-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/reacticon.svg",
       description:
         "Met React rebuilding a side project into a SPA.",
     },
     {
-      bgColor: "var(--angular-color)",
+      borderColor: "var(--angular-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/angularicon.svg",
       description:
         "I met Angular on a large admin dashboard at work.",
     },
     {
-      bgColor: "var(--tailwind-color)",
+      borderColor: "var(--tailwind-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/tailwindicon.svg",
       description:
         "Picked up Tailwind while prototyping UI ideas.",
     },
     {
-      bgColor: "var(--typescript-color)",
+      borderColor: "var(--typescript-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/typescripticon.svg",
       description:
         "I adopted TypeScript after a few painful runtime bugs.",
     },
     {
-      bgColor: "var(--csharp-color)",
+      borderColor: "var(--csharp-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/csharpicon.svg",
       description:
         "Learned C# building backend APIs and tools.",
     },
     {
-      bgColor: "var(--figma-color)",
+      borderColor: "var(--figma-color)",
+      bgColor: "var(--fourth-color)",
       svg: "/svg/figmaicon.svg",
       description:
         "Started using Figma to sync design and dev.",
@@ -76,7 +82,7 @@ export default function SkillsPage() {
                 <div className="absolute w-full h-full top-0 left-0 overflow-hidden scale-100 group-hover:scale-[1.06] rounded-[1.5rem] transition-all duration-300">
                 <div className="absolute opacity-0 group-hover:opacity-100 w-full h-full top-0 left-0 rounded-full scale-[2] animate-[spin_5s_linear_infinite]"
                   style={{
-                    background: `conic-gradient(from var(--gradient-rotation, 0deg), ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor}, white, white, ${skill.bgColor}, ${skill.bgColor})`,
+                    background: `conic-gradient(from var(--gradient-rotation, 0deg), ${skill.borderColor}, ${skill.borderColor}, white, white, ${skill.borderColor}, ${skill.borderColor}, white, white, ${skill.borderColor}, ${skill.borderColor})`,
                   }}
                 
                 ></div>

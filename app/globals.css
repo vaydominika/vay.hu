@@ -4,9 +4,10 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  --primary-color: #FAF9F6;
-  --secondary-color: #E6B8C2;
-  --third-color: #1B1F3B;
+  --primary-color: rgb(250, 249, 246);
+  --secondary-color: rgb(230, 184, 194);
+  --third-color: #3b1335;
+  --fourth-color: rgb(247, 235, 237);
   
   --react-color: #cff2fc;
   --angular-color: #ffc6e1;

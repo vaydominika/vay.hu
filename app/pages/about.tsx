@@ -28,7 +28,7 @@ export default function AboutPage() {
         </h1>
         
         <Card
-          backgroundColor="linear-gradient(135deg, #F5ECEA 0%, #ECEFF8 100%)"
+          backgroundColor="linear-gradient(135deg, var(--fourth-color) 50%, var(--third-color) 300%)"
           borderRadius="2rem"
           padding="2rem"
           className="max-w-5xl mx-auto">
