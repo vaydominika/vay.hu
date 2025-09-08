@@ -21,7 +21,7 @@ export default function AboutPage() {
     return () => clearInterval(intervalId);
   }, [frames.length]);
   return (
-    <div id="about" className="w-screen h-screen relative overflow-hidden bg-primary" style={{ backgroundImage: 'url(/svg/gettoknowmebg.svg)' }}>
+    <div id="about" className="w-screen min-h-screen relative overflow-hidden bg-primary pb-4" style={{ backgroundImage: 'url(/svg/gettoknowmebg.svg)' }}>
       <div className="pt-[19px] text-center">
         <h1 className="text-[54px] font-bold text-third text-center mb-6">
           Get to know <span className="italic bg-gradient-to-br from-secondary to-[#4A55A1] bg-clip-text text-transparent pr-1">me</span>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="flex justify-center">
               <div className="relative w-[420px] h-[550px] overflow-visible">
                 <img
-                  src="/svg/pic/me.png"
+                  src="/pic/me.png"
                   alt="Dominika"
                   className="absolute inset-0 w-[420px] h-[570px] object-cover rounded-[1.5rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 />

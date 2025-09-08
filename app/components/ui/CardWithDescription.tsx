@@ -37,35 +37,36 @@ const CardWithDescription: React.FC<CardWithDescriptionProps> = ({
   const isRight = bookmarkSide === 'right';
 
   return (
-    <div className={`relative inline-block overflow-visible w-fit ${isRight ? 'self-start' : 'self-end'} ${className}`}>
-      <Card {...cardProps} className="relative z-10">
-        {children}
-      </Card>
-
-      <div
-        className={`absolute z-0 top-1/2 -translate-y-1/2 ${isRight ? 'right-0 translate-x-[50%] mr-10 text-right' : 'left-0 -translate-x-[50%] ml-10 text-left'} pointer-events-none`}
-        style={{ marginRight: isRight ? `calc(-1 * ${bookmarkOffset})` : undefined, marginLeft: !isRight ? `calc(-1 * ${bookmarkOffset})` : undefined }}
-      >
+    <div className={`relative grid inline-block overflow-visible w-full mb-12 ${isRight ? 'self-start' : 'self-end'} ${className}`}>
+      <div className="col-start-1 row-start-1 z-0">
         <div className="pointer-events-auto" style={{ minWidth: bookmarkMinWidth }}>
           <Card
             backgroundColor={bookmarkColor}
             borderRadius={bookmarkBorderRadius}
             padding={bookmarkPadding}
             shadow={true}
-            className="whitespace-nowrap w-full"
+            className="w-full min-h-[23rem]"
           >
             <div
+              className={`w-1/2 ${isRight ? 'ml-auto text-right' : 'text-left'}`}
               style={{
                 paddingLeft: isRight ? bookmarkInnerOffset : undefined,
                 paddingRight: !isRight ? bookmarkInnerOffset : undefined,
               }}
             >
-              <span style={{ color: bookmarkTextColor }} className="text-sm font-medium">
+              <p style={{ color: bookmarkTextColor }} className="text-sm font-medium leading-relaxed whitespace-normal break-words">
                 {bookmarkText}
-              </span>
+              </p>
             </div>
           </Card>
         </div>
+      </div>
+
+      {/* Foreground content card */}
+      <div className={`absolute col-start-1 row-start-1 z-10 ${isRight ? '-top-8 left-0' : '-top-8 right-0'}`}>
+        <Card {...cardProps} className="relative">
+          {children}
+        </Card>
       </div>
     </div>
   );

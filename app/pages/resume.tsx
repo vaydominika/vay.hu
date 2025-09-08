@@ -3,7 +3,7 @@
 import { Card } from "../components/ui";
 import Image from "next/image";
 import Badge from "../components/ui/Badge";
-import resumebg from "../../public/svg/pic/resumebg.jpg";
+import resumebg from "../../public/pic/resumebg.jpg";
 
 export default function ResumePage() {
   return (
