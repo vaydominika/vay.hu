@@ -15,6 +15,7 @@ export default function Navbar() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: "0px", width: "0px" });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navLinksRef = useRef<HTMLDivElement>(null);
 
   const moveIndicator = (target: HTMLElement) => {
@@ -80,22 +81,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-[30px] left-[260px] right-[260px] z-50 h-[4rem] bg-primary rounded-full"
+      className="fixed z-50 bg-primary rounded-full top-4 left-4 right-4 h-[3.25rem] md:top-[30px] md:left-[260px] md:right-[260px] md:h-[4rem]"
       style={{
         boxShadow:
           "0 2px 2px 0px rgba(0, 0, 0, 0.05), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9)",
       }}
     >
-      <div className="flex items-center h-full px-16">
+      <div className="flex items-center h-full px-4 md:px-16">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src="/svg/signature.svg" alt="Signature" className="h-12 w-auto" />
+          <img src="/svg/signature.svg" alt="Signature" className="h-9 w-auto md:h-12" />
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <div
           ref={navLinksRef}
-          className="flex-1 flex items-center justify-center gap-8 relative nav-links"
+          className="hidden md:flex flex-1 items-center justify-center gap-8 relative nav-links"
         >
           <span
             className="absolute bottom-2 h-[2px] bg-third/50 transition-all duration-300 ease-out"
@@ -106,9 +107,9 @@ export default function Navbar() {
             item.isButton ? (
               <Button
                 key={index}
-                onClick={(e) =>
-                  scrollToSection(item.href, index, e.currentTarget)
-                }
+                onClick={(e) => {
+                  scrollToSection(item.href, index, e.currentTarget);
+                }}
                 color="var(--secondary-color)"
                 textColor="var(--third-color)"
                 borderRadius="3rem"
@@ -119,9 +120,9 @@ export default function Navbar() {
             ) : (
               <button
                 key={index}
-                onClick={(e) =>
-                  scrollToSection(item.href, index, e.currentTarget)
-                }
+                onClick={(e) => {
+                  scrollToSection(item.href, index, e.currentTarget);
+                }}
                 className="px-4 text-third font-medium relative group nav-item cursor-pointer"
               >
                 {item.name}
@@ -130,7 +131,59 @@ export default function Navbar() {
             )
           )}
         </div>
+
+        {/* Mobile hamburger */}
+        <div className="ml-auto md:hidden">
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+            className="h-9 w-9 inline-flex items-center justify-center rounded-full text-third hover:bg-white/30"
+          >
+            <span className="block w-5 h-0.5 bg-third relative">
+              <span className={`absolute left-0 top-[-6px] w-5 h-0.5 bg-third transition-transform ${isMobileMenuOpen ? 'translate-y-[6px] rotate-45' : ''}`}></span>
+              <span className={`absolute left-0 top-[6px] w-5 h-0.5 bg-third transition-transform ${isMobileMenuOpen ? '-translate-y-[6px] -rotate-45' : ''}`}></span>
+            </span>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute left-0 right-0 top-full mt-2 px-4">
+          <div className="rounded-2xl bg-primary/95 backdrop-blur p-3 shadow-lg border border-white/30">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item, index) =>
+                item.isButton ? (
+                  <Button
+                    key={index}
+                    onClick={(e) => {
+                      scrollToSection(item.href, index, e.currentTarget);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    color="var(--secondary-color)"
+                    textColor="var(--third-color)"
+                    borderRadius="1.5rem"
+                    className="font-semibold h-[2.5rem] nav-item text-sm"
+                  >
+                    {item.name}
+                  </Button>
+                ) : (
+                  <button
+                    key={index}
+                    onClick={(e) => {
+                      scrollToSection(item.href, index, e.currentTarget);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="px-3 py-2 text-left text-third font-medium nav-item rounded-lg hover:bg-white/20"
+                  >
+                    {item.name}
+                  </button>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
